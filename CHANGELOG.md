@@ -7,6 +7,44 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.17.0] - 2026-10-22
+
+### Added
+
+- A four-step introduction the first time Dilo opens, available again from Settings.
+- A Settings window with sections for translation, other apps, appearance, general options
+  and version information.
+- Light theme and a "Match Windows" option that follow changes instantly, without restarting.
+- Translation history: the last 50 translations from the main window, encrypted on your PC.
+- Listen buttons that read the text or the translation aloud with the voices in Windows.
+- Clear button for the text box, and text size control with <kbd>Ctrl</kbd> + mouse wheel.
+- System tray icon. Dilo can stay in the tray when the window is closed and start with Windows.
+- When you close the window, Dilo asks whether to keep running in the tray or quit, with an
+  option to remember your choice.
+- An error notice with a **Retry** button when a translation fails.
+- A notice when Dilo detects the language you are typing in and switches direction.
+- Animations throughout: a loading screen, the window entrance, the road line moving while
+  Dilo translates, flipping language signs, paint flecks when you copy and an animated
+  close prompt. They are turned off when Windows animation effects are off.
+
+### Changed
+
+- The main window is simpler: everything except translating moved to Settings, and status
+  messages use plain language.
+- The floating translation card stays open while the pointer is over it and remains visible
+  longer for longer text.
+- "Copied" is confirmed on the Copy button itself.
+- The window remembers its size and position.
+- Opening Dilo while it is already running brings the existing window forward instead of
+  starting a second copy.
+
+### Security
+
+- Password fields and password managers are never read while "Translate where you type" is on.
+- The AI API key is stored encrypted with Windows Data Protection (DPAPI). Keys saved in plain
+  text by earlier versions are encrypted automatically.
+- Diagnostic logs are capped at about 1 MB.
+
 ## [1.16.0] - 2026-10-21
 
 ### Added
@@ -50,6 +88,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - First release: live English ⇄ Spanish translation with automatic language detection,
   casual AI mode, translation in other apps, selection shortcut and document translation.
 
-[Unreleased]: https://github.com/Grawkles/Dilo-releases/compare/v1.16.0...HEAD
+[Unreleased]: https://github.com/Grawkles/Dilo-releases/compare/v1.17.0...HEAD
+[1.17.0]: https://github.com/Grawkles/Dilo-releases/releases/tag/v1.17.0
 [1.16.0]: https://github.com/Grawkles/Dilo-releases/releases/tag/v1.16.0
 [1.15.0]: https://github.com/Grawkles/Dilo-releases/blob/main/CHANGELOG.md#1150---2026-10-18

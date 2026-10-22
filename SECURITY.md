@@ -7,8 +7,8 @@ Only the latest release receives fixes. Update from within Dilo or download the
 
 | Version | Supported |
 |---|---|
-| 1.16.x | Yes |
-| < 1.16 | No |
+| 1.17.x | Yes |
+| < 1.17 | No |
 
 ## How updates are protected
 
@@ -18,6 +18,12 @@ Only the latest release receives fixes. Update from within Dilo or download the
   publishes for that file. If they differ, the update is discarded.
 - Installers are not code-signed yet. You can verify any download manually as described in
   the [README](README.md#verifying-your-download).
+
+## How your data is protected
+
+- Your AI API key and your translation history are encrypted with Windows Data Protection
+  (DPAPI), so only your Windows account on this PC can read them.
+- "Translate where you type" ignores password fields and password managers entirely.
 
 ## Reporting a vulnerability
 

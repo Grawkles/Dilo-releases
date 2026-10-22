@@ -36,6 +36,11 @@ maintained privately.
   any app, and **Replace what I wrote** swaps your sentence for the translation in place.
 - **Selection shortcut.** Select text in any app and press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd>.
 - **Documents.** Translate `.txt`, `.md`, `.docx` and `.srt` files while keeping their structure.
+- **Listen.** Hear either text read aloud with the voices built into Windows.
+- **History.** Your last 50 translations, one click away, encrypted on your PC.
+- **Always at hand.** Dilo lives in the system tray, can start with Windows and remembers
+  its window size and position.
+- **Light, dark or match Windows**, with adjustable text size (<kbd>Ctrl</kbd> + mouse wheel).
 - **In-app updates.** Dilo checks this repository and updates itself in one click.
 
 ## System requirements
@@ -62,7 +67,7 @@ next to each file. To check the file you downloaded, open PowerShell in your Dow
 and run:
 
 ```powershell
-Get-FileHash .\Dilo-Setup-1.16.0.msi -Algorithm SHA256
+Get-FileHash .\Dilo-Setup-1.17.0.msi -Algorithm SHA256
 ```
 
 The `Hash` value must match the one published in the release. If it does not, delete the
@@ -72,9 +77,10 @@ file and download it again.
 
 From version 1.16.0, Dilo updates itself:
 
-1. Dilo checks for new versions when it starts. You can also select
-   **Buscar actualizaciones** (Check for updates) in the bottom-right corner.
-2. When a new version is available, select **Actualizar a vX.Y.Z** (Update to vX.Y.Z).
+1. Dilo checks for new versions when it starts. You can also open **Ajustes** (Settings,
+   the gear icon) and select **Buscar actualizaciones** (Check for updates).
+2. When a new version is available, select **Actualizar a la versión X.Y.Z**
+   (Update to version X.Y.Z) in the bottom-right corner.
 3. Dilo downloads the installer, verifies its checksum, closes, installs the update and
    reopens. Windows asks for permission once.
 
@@ -83,19 +89,25 @@ updated once by downloading the installer manually.
 
 ## Uninstalling
 
-Open **Settings → Apps → Installed apps**, find **Dilo** and select **Uninstall**.
-Your settings stay in `%AppData%\TraductorENES`; delete that folder to remove them too.
+First quit Dilo: right-click its tray icon and select **Salir de Dilo** (Quit Dilo). Then open
+**Settings → Apps → Installed apps**, find **Dilo** and select **Uninstall**.
+Your settings and history stay in `%AppData%\TraductorENES`; delete that folder to remove
+them too.
 
 ## Privacy
 
 - **What leaves your PC:** only the text being translated, sent over HTTPS to the
   translation service in use: Google Translate, Groq (casual mode, with your own key) or
   MyMemory (fallback).
-- **What stays on your PC:** your settings and API key, stored in
-  `%AppData%\TraductorENES\settings.json`.
+- **What stays on your PC:** your settings in `%AppData%\TraductorENES`. Your API key and
+  your translation history are encrypted with Windows Data Protection (DPAPI): only your
+  Windows account, on this PC, can read them. History can be turned off or cleared in
+  Settings.
 - **Translate where you type** is off by default. When enabled, Dilo reads the keys you
   type in other apps to build the current sentence. That sentence is held in memory only
-  long enough to translate it and is never written to disk.
+  long enough to translate it, is never written to disk and never enters the history.
+  Password fields and password managers are ignored completely.
+- Diagnostic logs record events, never the text you type, and are capped at about 1 MB.
 - Dilo has no accounts, no analytics and no advertising.
 
 ## Troubleshooting
@@ -104,13 +116,16 @@ Your settings stay in `%AppData%\TraductorENES`; delete that folder to remove th
 |---|---|
 | "Windows protected your PC" when installing | Select **More info → Run anyway**. See [Installation](#installation). |
 | Translations stop working | Check your internet connection. If Google is unavailable, Dilo falls back to AI (with a key) or MyMemory automatically. |
-| Casual mode has no effect | Add your free Groq API key with **Clave IA** (AI key). |
+| Translations stop working and a red notice appears | Check your connection and select **Reintentar** (Retry). |
+| Casual mode has no effect | Open **Ajustes** (Settings) and add your free Groq API key under **Clave de IA**. |
 | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd> does nothing | Another app may already use that shortcut. Close it and restart Dilo. |
+| Closing the window doesn't quit Dilo | By default Dilo asks; if you chose the tray, quit from the tray icon or change it in **Ajustes → Al cerrar la ventana**. |
+| "Listen" says there is no voice | Add the English or Spanish voice in **Windows Settings → Time & language → Speech**. |
 
 ## Support
 
 Found a bug or have a suggestion? [Open an issue](https://github.com/Grawkles/Dilo-releases/issues/new)
-and include your Dilo version (shown in the bottom-right corner of the window) and your
+and include your Dilo version (shown in the title bar and in **Ajustes → Acerca de**) and your
 Windows version. For security issues, see [SECURITY.md](SECURITY.md).
 
 ## License
