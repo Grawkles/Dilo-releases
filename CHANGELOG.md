@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.17.1] - 2026-10-22
+
+### Fixed
+
+- After installing an update, Dilo could reopen the old copy it was running from (for
+  example, the portable version) instead of the newly installed one, so it kept offering
+  the same update. It now always reopens the installed copy.
+
 ## [1.17.0] - 2026-10-22
 
 ### Added
@@ -88,7 +96,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - First release: live English ⇄ Spanish translation with automatic language detection,
   casual AI mode, translation in other apps, selection shortcut and document translation.
 
-[Unreleased]: https://github.com/Grawkles/Dilo-releases/compare/v1.17.0...HEAD
+[Unreleased]: https://github.com/Grawkles/Dilo-releases/compare/v1.17.1...HEAD
+[1.17.1]: https://github.com/Grawkles/Dilo-releases/releases/tag/v1.17.1
 [1.17.0]: https://github.com/Grawkles/Dilo-releases/releases/tag/v1.17.0
 [1.16.0]: https://github.com/Grawkles/Dilo-releases/releases/tag/v1.16.0
 [1.15.0]: https://github.com/Grawkles/Dilo-releases/blob/main/CHANGELOG.md#1150---2026-10-18
