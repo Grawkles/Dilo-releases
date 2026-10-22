@@ -67,7 +67,7 @@ next to each file. To check the file you downloaded, open PowerShell in your Dow
 and run:
 
 ```powershell
-Get-FileHash .\Dilo-Setup-1.17.0.msi -Algorithm SHA256
+Get-FileHash .\Dilo-Setup-1.17.1.msi -Algorithm SHA256
 ```
 
 The `Hash` value must match the one published in the release. If it does not, delete the
