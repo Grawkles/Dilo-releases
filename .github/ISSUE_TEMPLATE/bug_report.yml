@@ -1,0 +1,40 @@
+name: Bug report
+description: Something in Dilo does not work as expected.
+labels: [bug]
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Dilo version
+      description: Shown in the bottom-right corner of the window, for example v1.16.
+      placeholder: v1.16
+    validations:
+      required: true
+  - type: input
+    id: windows
+    attributes:
+      label: Windows version
+      placeholder: Windows 11 23H2
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you do, what did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Turn on "Donde escribo"
+        2. Type a sentence in Discord
+        3. ...
+  - type: textarea
+    id: log
+    attributes:
+      label: Diagnostic log (optional)
+      description: Last lines of %AppData%\TraductorENES\trace.log. It records events, not the text you type.
+      render: text

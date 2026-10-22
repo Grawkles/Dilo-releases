@@ -1,0 +1,11 @@
+name: Feature request
+description: Suggest an improvement for Dilo.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What would you like Dilo to do?
+      description: Describe the problem you want to solve, not only the solution.
+    validations:
+      required: true
